@@ -16,9 +16,15 @@ const GradientView: React.FC<GradientViewProps> = ({
                                                        end = { x: 1, y: 1 },
                                                        colors = [COLORS.gradientStart, COLORS.gradientEnd],
                                                    }) => (
-    <LinearGradient colors={colors} start={start} end={end} style={style}>
+    <LinearGradient
+        colors={colors}
+        start={start}
+        end={end}
+        style={[{ flex: 1 }, style]}
+    >
         {children}
     </LinearGradient>
 );
 
 export default GradientView;
+

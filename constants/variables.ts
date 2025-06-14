@@ -7,7 +7,7 @@ export const COLORS = {
     cardBackground: '#FFFFFF',
 
     textPrimary: '#2C3E50',
-    textSecondary: '#7F8C8D',
+    textSecondary: '#c6d3d5',
     textInverse: '#FFFFFF',
 
     buttonBackground: '#1ABC9C',
@@ -22,6 +22,7 @@ export const COLORS = {
 
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowStrong: 'rgba(0, 0, 0, 0.25)',
+    transparentBackground: 'rgba(199,202,209,0.15)',
 
     hover: '#E8ECF1',
     pressed: '#DDE3EB',

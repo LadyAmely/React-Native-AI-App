@@ -29,4 +29,7 @@ export const COLORS = {
 
     gradientStart: '#6C8EF1',
     gradientEnd: '#A26CF1',
+
+    progressBackground: '#8585c8',
+    progressBar: '#75a7d8',
 };

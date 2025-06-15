@@ -4,13 +4,20 @@ import {styles} from "@/screens/Achievement/Styles";
 import Card from "@/components/ui/atoms/Card/Card";
 import ProgressBar from "@/components/ui/atoms/Bar/ProgressBar/ProgressBar";
 import {useAchievement} from "@/hooks/useAchievement";
+import RewardButton from "@/components/ui/atoms/Button/Reward/RewardButton";
+import {router} from "expo-router";
 
 
 const AchievementScreen = () => {
     const achievements = useAchievement();
 
+    const goToReward =()=>{
+        router.push('./reward');
+    };
+
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.container} contentContainerStyle={{ paddingTop: 16 }}>
+        <RewardButton onPress={goToReward}/>
             {achievements?.map((ach) => {
                 const progress = ach.current / ach.target;
                 return (

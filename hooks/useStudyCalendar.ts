@@ -1,38 +1,67 @@
-import { useMemo, useState } from "react";
-
-import { Alert } from "react-native";
-import {StudyDates} from "@/types/studyDates";
+import { useEffect, useMemo, useState } from "react";
+import { collection, getDocs, setDoc, doc } from "firebase/firestore";
+import { StudyDates } from "@/types/studyDates";
+import {db} from "@/firebase/config";
 
 export const useStudyCalendar = () => {
-    const [studyDates] = useState<StudyDates>({
-        '2025-06-01': { studied: true },
-        '2025-06-02': { studied: true },
-        '2025-06-05': { studied: true },
-        '2025-06-07': { studied: true },
-    });
+    const userId = "demoUser";
+
+    const [studyDates, setStudyDates] = useState<StudyDates>({});
+    const [selectedDate, setSelectedDate] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchDates = async () => {
+            const snapshot = await getDocs(collection(db, "studyPlans"));
+            const result: StudyDates = {};
+            snapshot.forEach(docSnap => {
+                const data = docSnap.data();
+                if (data.userId === userId) {
+                    result[data.date] = { studied: !!data.studied, plannedTopic: data.plannedTopic };
+                }
+            });
+            setStudyDates(result);
+        };
+        fetchDates();
+    }, []);
 
     const markedDates = useMemo(() => {
         return Object.keys(studyDates).reduce((acc, date) => {
+            const studied = studyDates[date]?.studied;
             acc[date] = {
                 marked: true,
-                dotColor: '#4caf50',
                 selected: true,
-                selectedColor: '#a5d6a7',
+                dotColor: studied ? "#4caf50" : "#fbc02d",
+                selectedColor: studied ? "#a5d6a7" : "#fff59d",
             };
             return acc;
         }, {} as any);
     }, [studyDates]);
 
-    const handleDayPress = (dateString: string) => {
-        const studied = !!studyDates[dateString];
-        Alert.alert(
-            dateString,
-            studied ? 'You studied on this day' : 'No study activity on this day'
-        );
+    const openPlanModal = (dateString: string) => {
+        setSelectedDate(dateString);
+    };
+
+    const savePlan = async (date: string, topic: string) => {
+        await setDoc(doc(db, "studyPlans", `${userId}_${date}`), {
+            userId,
+            date,
+            plannedTopic: topic,
+            studied: false,
+        });
+
+        setStudyDates(prev => ({
+            ...prev,
+            [date]: { studied: false, plannedTopic: topic },
+        }));
+
+        setSelectedDate(null);
     };
 
     return {
         markedDates,
-        onDayPress: (day: { dateString: string }) => handleDayPress(day.dateString),
+        selectedDate,
+        setSelectedDate,
+        onDayPress: (day: { dateString: string }) => openPlanModal(day.dateString),
+        savePlan,
     };
 };

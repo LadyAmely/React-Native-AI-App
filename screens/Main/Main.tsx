@@ -30,6 +30,7 @@ const MainScreen = () => {
         goToAIGenerator,
         goToCalendar,
         goToDailyTip,
+        goToLearning,
         menuItems,
     } = useMain();
 
@@ -42,7 +43,7 @@ const MainScreen = () => {
                 deleteFlashcard={(index) => deleteFlashcard(flashcards[index].id)}
             />
 
-            <TouchableOpacity style={styles.button} onPress={goToCategoryScreen}>
+            <TouchableOpacity style={styles.button} onPress={goToLearning}>
                 <LinearGradient
                     colors={[COLORS.gradientStart, COLORS.gradientEnd]}
                     start={{ x: 0, y: 0 }}

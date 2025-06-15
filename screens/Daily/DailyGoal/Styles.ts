@@ -1,24 +1,49 @@
 import { StyleSheet } from 'react-native';
+import { COLORS } from '@/constants/variables';
 
 export const styles = StyleSheet.create({
-    input: {
-        borderWidth: 1,
-        borderColor: '#ccc',
-        borderRadius: 8,
-        padding: 8,
-        marginBottom: 8,
+    container: {
+        flex: 1,
+        backgroundColor: COLORS.backgroundLight,
+        paddingHorizontal: 24,
+        paddingTop: 32,
     },
     title: {
-        fontWeight: 'bold',
-        fontSize: 20,
-        marginBottom: 8,
+        fontSize: 24,
+        fontWeight: '800',
+        color: COLORS.gradientStart,
+        marginBottom: 12,
+        letterSpacing: 0.5,
     },
     subtitle: {
-        fontWeight: 'bold',
-        marginBottom: 8,
+        fontSize: 18,
+        fontWeight: '700',
+        color: COLORS.textPrimary,
+        marginBottom: 10,
+    },
+    input: {
+        borderWidth: 1.5,
+        borderColor: COLORS.gradientStart,
+        borderRadius: 14,
+        paddingVertical: 12,
+        paddingHorizontal: 16,
+        marginBottom: 16,
+        fontSize: 16,
+        backgroundColor: COLORS.cardBackground,
+        color: COLORS.textPrimary,
+        fontWeight: '600',
+        shadowColor: COLORS.shadowColor,
+        shadowOpacity: 0.05,
+        shadowRadius: 4,
+        shadowOffset: { width: 0, height: 2 },
+        elevation: 2,
     },
     success: {
-        color: 'green',
-        marginTop: 8,
+        color: COLORS.success,
+        marginTop: 12,
+        fontWeight: '700',
+        fontSize: 16,
+        textAlign: 'center',
+        letterSpacing: 0.3,
     },
 });

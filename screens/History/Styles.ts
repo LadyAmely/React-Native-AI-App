@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     title: {
         fontSize: 28,
         fontWeight: '700',
-        color: COLORS.textPrimary,
+        color: COLORS.gradientStart,
         marginBottom: 24,
         textAlign: 'center',
         letterSpacing: 0.5,

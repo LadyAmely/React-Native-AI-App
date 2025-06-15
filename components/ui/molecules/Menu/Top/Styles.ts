@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
         top: 0,
         left: 0,
         right: 0,
-        padding: 40,
+        padding: 80,
         marginBottom: 0,
         flexDirection: 'row',
         justifyContent: 'space-around',

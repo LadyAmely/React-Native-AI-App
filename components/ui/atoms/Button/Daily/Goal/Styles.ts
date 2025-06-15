@@ -4,7 +4,7 @@ import { COLORS } from '@/constants/variables';
 export const styles = StyleSheet.create({
     ButtonWrapper: {
         position: 'absolute',
-        top: 180,
+        top: 50,
         right: 20,
         elevation: 5,
         shadowColor: COLORS.shadowStrong,

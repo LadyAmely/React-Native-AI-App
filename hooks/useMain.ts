@@ -1,11 +1,13 @@
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '@/types/navigation';
+import {useFlashcards} from "@/hooks/useFlashcards";
+import {getMenuItems} from "@/utils/menu/menuItems";
 
 
 export const useMain = () => {
-    const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'HomeScreen'>>();
-
+    const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'MainScreen'>>();
+    const menuItems = getMenuItems(navigation);
     const {
         flashcards,
         question,
@@ -43,6 +45,5 @@ export const useMain = () => {
         goToCategoryScreen,
         goToAIGenerator,
         menuItems,
-        topMenuItems,
     };
 };

@@ -6,9 +6,8 @@ import {OnboardingSlideProps} from "@/screens/Onboarding/types";
 
 const { width } = Dimensions.get('window');
 
-const OnboardingSlide: React.FC<OnboardingSlideProps> = ({ title, subtitle, image }) => (
+const OnboardingSlide: React.FC<OnboardingSlideProps> = ({ title, subtitle }) => (
     <View style={[styles.slide, { width }]}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
     </View>

@@ -29,7 +29,7 @@ const OnboardingScreen = () => {
                 ref={flatListRef}
                 data={SLIDES}
                 renderItem={({ item }) => (
-                    <OnboardingSlide title={item.title} subtitle={item.subtitle} image={item.image} />
+                    <OnboardingSlide title={item.title} subtitle={item.subtitle} />
                 )}
                 horizontal
                 pagingEnabled

@@ -28,7 +28,6 @@ const MainScreen = () => {
         goToCategoryScreen,
         goToAIGenerator,
         menuItems,
-        topMenuItems,
     } = useMain();
 
     return (

@@ -1,8 +1,10 @@
 
-import React from 'react';
-import SplashScreen from "@/screens/Splash/Splash";
+import 'react-native-gesture-handler';
+import OnboardingScreen from "@/screens/Onboarding/Onboarding";
 
 
-export default function Index() {
-    return <SplashScreen />;
-}
+
+
+
+
+

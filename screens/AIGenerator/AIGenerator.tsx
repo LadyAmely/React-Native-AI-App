@@ -23,7 +23,7 @@ const AIGeneratorScreen = () => {
                     onChangeText={setTopic}
                     placeholder="Enter a subject"
                     placeholderTextColor="#f0d9ff"
-                    style={[Styles.input, { color: '#fff', borderColor: '#fff' }]}
+                    style={[Styles.input, { color: 'rgba(29,37,51,0.94)', borderColor: '#fff' }]}
                 />
                 <PrimaryButton onPress={handleGenerate} title="Generate flashcards" />
             </LinearGradient>

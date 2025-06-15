@@ -16,7 +16,7 @@ const AIButton: React.FC<AIButtonProps> = ({ onPress }) => {
     return (
         <TouchableOpacity onPress={onPress} style={styles.aiButtonWrapper}>
             <GradientView
-                colors={[COLORS.gradientStart, COLORS.gradientEnd]}
+                colors={[COLORS.primary, COLORS.secondary]}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
                 style={styles.aiButtonInner}

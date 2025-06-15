@@ -8,8 +8,8 @@ import {COLORS} from "@/constants/variables";
 import FlashcardForm from "@/components/ui/organisms/Form/Flashcard/FlashcardForm";
 import FabButton from "@/components/ui/atoms/Button/Fab/FabButton";
 import AIButton from "@/components/ui/atoms/Button/AI/AIButton";
-import BottomMenu from "@/components/ui/molecules/Menu/Bottom/BottomMenu";
 import {styles} from "@/screens/Main/Styles";
+import CalendarButton from "@/components/ui/atoms/Button/Calendar/CalendarButton";
 
 
 
@@ -27,11 +27,12 @@ const MainScreen = () => {
         closeModal,
         goToCategoryScreen,
         goToAIGenerator,
+        goToCalendar,
         menuItems,
     } = useMain();
 
     return (
-        <View style={{ flex: 1, position: 'relative', padding: 20 }}>
+        <View style={{ flex: 1, position: 'relative', padding: 20, top: 20 }}>
 
             <FlashcardList
                 flashcards={flashcards}
@@ -49,7 +50,6 @@ const MainScreen = () => {
                 </LinearGradient>
             </TouchableOpacity>
 
-            <BottomMenu items={menuItems} />
 
             <Modal visible={isModalVisible} animationType="slide" transparent onRequestClose={closeModal}>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'transparent' }}>
@@ -68,6 +68,7 @@ const MainScreen = () => {
 
             <FabButton onPress={openModal} />
             <AIButton onPress={goToAIGenerator} />
+            <CalendarButton onPress={goToCalendar}/>
         </View>
     );
 };

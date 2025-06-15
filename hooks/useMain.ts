@@ -3,9 +3,11 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '@/types/navigation';
 import {useFlashcards} from "@/hooks/useFlashcards";
 import {getMenuItems} from "@/utils/menu/menuItems";
+import {useRouter} from "expo-router";
 
 
 export const useMain = () => {
+    const router = useRouter();
     const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'MainScreen'>>();
     const menuItems = getMenuItems(navigation);
     const {
@@ -28,7 +30,11 @@ export const useMain = () => {
     };
 
     const goToAIGenerator = () => {
-        navigation.navigate('AIGeneratorScreen');
+        router.push('./AIGenerator');
+    };
+
+    const goToCalendar = () =>{
+      router.push('./Calendar');
     };
 
     return {
@@ -44,6 +50,7 @@ export const useMain = () => {
         closeModal,
         goToCategoryScreen,
         goToAIGenerator,
+        goToCalendar,
         menuItems,
     };
 };

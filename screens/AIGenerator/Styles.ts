@@ -46,6 +46,7 @@ export const Styles = StyleSheet.create({
     cardGradient: {
         borderRadius: 16,
         padding: 20,
+        top: 50,
         marginBottom: 20,
         shadowColor: COLORS.shadowColor,
         shadowOffset: { width: 0, height: 4 },

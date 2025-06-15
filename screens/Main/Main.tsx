@@ -10,6 +10,7 @@ import FabButton from "@/components/ui/atoms/Button/Fab/FabButton";
 import AIButton from "@/components/ui/atoms/Button/AI/AIButton";
 import {styles} from "@/screens/Main/Styles";
 import CalendarButton from "@/components/ui/atoms/Button/Calendar/CalendarButton";
+import TipButton from "@/components/ui/atoms/Button/Daily/Tip/TipButton";
 
 
 
@@ -28,6 +29,7 @@ const MainScreen = () => {
         goToCategoryScreen,
         goToAIGenerator,
         goToCalendar,
+        goToDailyTip,
         menuItems,
     } = useMain();
 
@@ -70,6 +72,7 @@ const MainScreen = () => {
             <FabButton onPress={openModal} />
             <AIButton onPress={goToAIGenerator} />
             <CalendarButton onPress={goToCalendar}/>
+            <TipButton onPress={goToDailyTip}/>
         </View>
     );
 };

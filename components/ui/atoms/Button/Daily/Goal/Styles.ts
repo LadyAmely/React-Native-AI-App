@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 6,
         borderRadius: 32,
+        zIndex: 1000,
     },
     ButtonInner: {
         height: 60,

@@ -37,6 +37,10 @@ export const useMain = () => {
       router.push('./Calendar');
     };
 
+    const goToDailyTip =()=>{
+      router.push('./tip');
+    };
+
     return {
         flashcards,
         question,
@@ -51,6 +55,7 @@ export const useMain = () => {
         goToCategoryScreen,
         goToAIGenerator,
         goToCalendar,
+        goToDailyTip,
         menuItems,
     };
 };

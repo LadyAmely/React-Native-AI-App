@@ -27,3 +27,5 @@ const AchievementScreen = () => {
         </ScrollView>
     );
 };
+
+export default AchievementScreen;

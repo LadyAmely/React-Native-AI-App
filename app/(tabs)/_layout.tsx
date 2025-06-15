@@ -11,8 +11,21 @@ export default function TabLayout() {
         <View style={styles.container}>
             <TopMenu
                 items={[
-                    { label: 'AI', icon: 'sparkles-outline', onPress: () => router.push('/AIGenerator') },
-                    { label: 'Tips', icon: 'bulb-outline', onPress: () => router.push('/profile') },
+                    {
+                        label: 'Fun',
+                        icon: 'happy-outline',
+                        onPress: () => router.push('/challenges'),
+                    },
+                    {
+                        label: 'Stars',
+                        icon: 'star-outline',
+                        onPress: () => router.push('/achievement'),
+                    },
+                    {
+                        label:'Explore',
+                        icon: 'planet-outline',
+                        onPress: ()=> router.push('/explore'),
+                    },
                 ]}
             />
 
@@ -34,6 +47,11 @@ export default function TabLayout() {
                                     icon: 'person-outline',
                                     onPress: () => router.push('/profile'),
                                 },
+                                {
+                                    label: 'Journal',
+                                    icon: 'book-outline',
+                                    onPress: () => router.push('/history'),
+                                }
                             ]}
                         />
                     )}

@@ -27,7 +27,7 @@ export const useOnboarding = () => {
         if (currentIndex < SLIDES.length - 1) {
             flatListRef.current?.scrollToIndex({ index: currentIndex + 1 });
         } else {
-            navigation.navigate('Main');
+            navigation.navigate('MainScreen');
         }
     };
 

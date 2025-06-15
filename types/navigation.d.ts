@@ -2,7 +2,7 @@
 
 export type RootStackParamList = {
     SplashScreen: undefined;
-    HomeScreen: undefined;
+    MainScreen: undefined;
     CategoryScreen: undefined;
     LearningScreen: { flashcards: { question: string; answer: string }[] };
     SummaryScreen: { category: string; correctAnswers: number; totalQuestions: number };
